@@ -284,71 +284,23 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">Address</p>
-                  <p className="mt-1 text-sm text-muted-foreground">[ADD ADDRESS]</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Tõnismägi 11a, 10119 Tallinn, Estonia</p>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
-              {formSubmitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-card-foreground">Message Sent</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Thank you for contacting SOHAN OÜ. We will get back to you soon.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-card-foreground">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      className="mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-card-foreground">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-card-foreground">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      className="mt-1.5 block w-full resize-none rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              )}
+            {/* Google Map */}
+            <div className="overflow-hidden rounded-lg border border-border bg-card">
+              <iframe
+                title="SOHAN OÜ location on Google Maps"
+                src="https://www.google.com/maps?q=T%C3%B5nism%C3%A4gi+11a,+10119+Tallinn,+Estonia&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "360px" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
