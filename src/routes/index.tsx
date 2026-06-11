@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { Wheat, Leaf, Package, Coffee, Cookie, Home, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import riceHero from "@/assets/rice-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,13 +68,7 @@ const categories = [
 ];
 
 function Index() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -137,13 +132,13 @@ function Index() {
       <section id="hero" className="relative overflow-hidden">
         <div className="relative h-[320px] w-full sm:h-[400px] md:h-[480px]">
           <img
-            src="/images/hero-groceries.jpg"
-            alt="Grocery products including rice, grains, spices, tea, and packaged food"
+            src={riceHero.url}
+            alt="Sohan rice product packaging in green, yellow, and red bags"
             className="h-full w-full object-cover"
             width={1280}
             height={640}
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               SOHAN OÜ
@@ -153,7 +148,7 @@ function Index() {
             </p>
             <button
               onClick={() => scrollTo("contact")}
-              className="mt-6 inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90"
+              className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Contact Us
             </button>
