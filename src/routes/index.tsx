@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { Wheat, Leaf, Package, Coffee, Cookie, Home, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import riceHero from "@/assets/rice-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,13 +68,7 @@ const categories = [
 ];
 
 function Index() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -137,13 +132,13 @@ function Index() {
       <section id="hero" className="relative overflow-hidden">
         <div className="relative h-[320px] w-full sm:h-[400px] md:h-[480px]">
           <img
-            src="/images/hero-groceries.jpg"
-            alt="Grocery products including rice, grains, spices, tea, and packaged food"
+            src={riceHero.url}
+            alt="Sohan rice product packaging in green, yellow, and red bags"
             className="h-full w-full object-cover"
             width={1280}
             height={640}
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               SOHAN OÜ
@@ -153,7 +148,7 @@ function Index() {
             </p>
             <button
               onClick={() => scrollTo("contact")}
-              className="mt-6 inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90"
+              className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Contact Us
             </button>
@@ -163,7 +158,7 @@ function Index() {
 
       {/* About */}
       <section id="about" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
           About Sohan
         </h2>
         <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground">
@@ -182,7 +177,7 @@ function Index() {
       {/* Product Categories */}
       <section id="products" className="bg-secondary/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
             Product Categories
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -213,7 +208,7 @@ function Index() {
 
       {/* Company Information */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
           Company Information
         </h2>
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-card">
@@ -223,7 +218,7 @@ function Index() {
                 { label: "Company name", value: "SOHAN OÜ" },
                 { label: "Registry code", value: "16028578" },
                 { label: "VAT number", value: "EE102400935" },
-                { label: "Location", value: "Tallinn, Estonia" },
+                { label: "Location", value: "Tõnismägi 11a, 10119 Tallinn, Estonia" },
                 { label: "Business activity", value: "Grocery, food products and general retail" },
                 { label: "Email", value: "[ADD EMAIL]" },
                 { label: "Phone", value: "[ADD PHONE NUMBER]" },
@@ -246,7 +241,7 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="bg-secondary/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
             Contact
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -289,71 +284,23 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">Address</p>
-                  <p className="mt-1 text-sm text-muted-foreground">[ADD ADDRESS]</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Tõnismägi 11a, 10119 Tallinn, Estonia</p>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
-              {formSubmitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-card-foreground">Message Sent</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Thank you for contacting SOHAN OÜ. We will get back to you soon.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-card-foreground">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      className="mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-card-foreground">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-card-foreground">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      className="mt-1.5 block w-full resize-none rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              )}
+            {/* Google Map */}
+            <div className="overflow-hidden rounded-lg border border-border bg-card">
+              <iframe
+                title="SOHAN OÜ location on Google Maps"
+                src="https://www.google.com/maps?q=T%C3%B5nism%C3%A4gi+11a,+10119+Tallinn,+Estonia&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "360px" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
