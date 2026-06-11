@@ -218,7 +218,7 @@ function Index() {
                 { label: "Company name", value: "SOHAN OÜ" },
                 { label: "Registry code", value: "16028578" },
                 { label: "VAT number", value: "EE102400935" },
-                { label: "Location", value: "Tallinn, Estonia" },
+                { label: "Location", value: "Tõnismägi 11a, 10119 Tallinn, Estonia" },
                 { label: "Business activity", value: "Grocery, food products and general retail" },
                 { label: "Email", value: "[ADD EMAIL]" },
                 { label: "Phone", value: "[ADD PHONE NUMBER]" },
