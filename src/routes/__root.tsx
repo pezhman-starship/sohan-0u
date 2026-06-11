@@ -82,6 +82,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "SOHAN OÜ" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "SOHAN OÜ | Grocery and Food Products Estonia" },
+      { name: "twitter:title", content: "SOHAN OÜ | Grocery and Food Products Estonia" },
+      { property: "og:description", content: "SOHAN OÜ is an Estonia-registered company based in Tallinn, active in grocery, food products, packaged goods, beverages, snacks, and general retail-related activities." },
+      { name: "twitter:description", content: "SOHAN OÜ is an Estonia-registered company based in Tallinn, active in grocery, food products, packaged goods, beverages, snacks, and general retail-related activities." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/098bf187-df60-441e-b90d-7789093c601b/id-preview-c11ff2d4--7ccdc354-82df-4973-b7b3-6b327de0780d.lovable.app-1781186108642.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/098bf187-df60-441e-b90d-7789093c601b/id-preview-c11ff2d4--7ccdc354-82df-4973-b7b3-6b327de0780d.lovable.app-1781186108642.png" },
     ],
     links: [
       {
