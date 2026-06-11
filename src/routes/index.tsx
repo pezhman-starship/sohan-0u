@@ -158,7 +158,7 @@ function Index() {
 
       {/* About */}
       <section id="about" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
           About Sohan
         </h2>
         <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground">
@@ -177,7 +177,7 @@ function Index() {
       {/* Product Categories */}
       <section id="products" className="bg-secondary/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
             Product Categories
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -208,7 +208,7 @@ function Index() {
 
       {/* Company Information */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
           Company Information
         </h2>
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-card">
@@ -241,7 +241,7 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="bg-secondary/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
             Contact
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
