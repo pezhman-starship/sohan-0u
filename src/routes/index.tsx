@@ -219,10 +219,10 @@ function Index() {
                 { label: "Registry code", value: "16028578" },
                 { label: "VAT number", value: "EE102400935" },
                 { label: "Location", value: "Tõnismägi 11a, 10119 Tallinn, Estonia" },
-                { label: "Business activity", value: "Grocery, food products and general retail" },
-                { label: "Email", value: "[ADD EMAIL]" },
-                { label: "Phone", value: "[ADD PHONE NUMBER]" },
-                { label: "WhatsApp", value: "[ADD WHATSAPP NUMBER]" },
+                { label: "\n", value: "\n" },
+                { label: "Email", value: "info@sohan.ee" },
+                { label: "Phone", value: "+37256089607" },
+                { label: "WhatsApp", value: "+37256089607" },
               ].map((row) => (
                 <tr key={row.label} className="border-b border-border last:border-b-0">
                   <th className="w-1/3 px-6 py-4 font-medium text-muted-foreground sm:w-48">
@@ -257,7 +257,7 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">Email</p>
-                  <p className="mt-1 text-sm text-muted-foreground">[ADD EMAIL]</p>
+                  <p className="mt-1 text-sm text-muted-foreground">info@sohan.ee</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -266,7 +266,7 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">Phone</p>
-                  <p className="mt-1 text-sm text-muted-foreground">[ADD PHONE NUMBER]</p>
+                  <p className="mt-1 text-sm text-muted-foreground">+37256089607</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -275,7 +275,7 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">WhatsApp</p>
-                  <p className="mt-1 text-sm text-muted-foreground">[ADD WHATSAPP NUMBER]</p>
+                  <p className="mt-1 text-sm text-muted-foreground">+37256089607</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
