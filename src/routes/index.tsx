@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Wheat, Leaf, Package, Coffee, Cookie, Home, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
-import riceHero from "@/assets/rice-hero.png.asset.json";
+import riceHero from "@/assets/products-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
