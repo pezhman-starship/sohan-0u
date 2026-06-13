@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Wheat, Leaf, Package, Coffee, Cookie, Home, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
-import riceHero from "@/assets/rice-hero.png.asset.json";
+import riceHero from "@/assets/products-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,7 +133,7 @@ function Index() {
         <div className="relative h-[320px] w-full sm:h-[400px] md:h-[480px]">
           <img
             src={riceHero.url}
-            alt="Sohan rice product packaging in green, yellow, and red bags"
+            alt="Sohan product range — Ayran beverages, premium dates, and rose tea"
             className="h-full w-full object-cover"
             width={1280}
             height={640}
@@ -206,37 +206,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Company Information */}
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-          Company Information
-        </h2>
-        <div className="mt-8 overflow-hidden rounded-lg border border-border bg-card">
-          <table className="w-full text-left text-sm">
-            <tbody>
-              {[
-                { label: "Company name", value: "SOHAN OÜ" },
-                { label: "Registry code", value: "16028578" },
-                { label: "VAT number", value: "EE102400935" },
-                { label: "Location", value: "Tõnismägi 11a, 10119 Tallinn, Estonia" },
-                { label: "\n", value: "\n" },
-                { label: "Email", value: "info@sohan.ee" },
-                { label: "Phone", value: "+37256089607" },
-                { label: "WhatsApp", value: "+37256089607" },
-              ].map((row) => (
-                <tr key={row.label} className="border-b border-border last:border-b-0">
-                  <th className="w-1/3 px-6 py-4 font-medium text-muted-foreground sm:w-48">
-                    {row.label}
-                  </th>
-                  <td className="px-6 py-4 text-card-foreground">
-                    {row.value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
 
       {/* Contact */}
       <section id="contact" className="bg-secondary/40">
@@ -308,12 +277,31 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; 2026 SOHAN OÜ. All rights reserved.
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Company name</p>
+              <p className="mt-1 text-sm text-foreground">SOHAN OÜ</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">VAT number</p>
+              <p className="mt-1 text-sm text-foreground">EE102400935</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Registry code</p>
+              <p className="mt-1 text-sm text-foreground">16028578</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Address</p>
+              <p className="mt-1 text-sm text-foreground">Tõnismägi 11a, 10119 Tallinn, Estonia</p>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-border pt-6 text-center">
+            <p className="text-sm text-muted-foreground">&copy; 2026 SOHAN OÜ. All rights reserved.</p>
+          </div>
         </div>
       </footer>
+
     </div>
   );
 }
