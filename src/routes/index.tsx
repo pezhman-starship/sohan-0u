@@ -277,12 +277,31 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; 2026 SOHAN OÜ. All rights reserved.
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Company name</p>
+              <p className="mt-1 text-sm text-foreground">SOHAN OÜ</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">VAT number</p>
+              <p className="mt-1 text-sm text-foreground">EE102400935</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Registry code</p>
+              <p className="mt-1 text-sm text-foreground">16028578</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Address</p>
+              <p className="mt-1 text-sm text-foreground">Tõnismägi 11a, 10119 Tallinn, Estonia</p>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-border pt-6 text-center">
+            <p className="text-sm text-muted-foreground">&copy; 2026 SOHAN OÜ. All rights reserved.</p>
+          </div>
         </div>
       </footer>
+
     </div>
   );
 }
