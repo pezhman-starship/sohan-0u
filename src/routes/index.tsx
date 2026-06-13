@@ -206,37 +206,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Company Information */}
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-          Company Information
-        </h2>
-        <div className="mt-8 overflow-hidden rounded-lg border border-border bg-card">
-          <table className="w-full text-left text-sm">
-            <tbody>
-              {[
-                { label: "Company name", value: "SOHAN OÜ" },
-                { label: "Registry code", value: "16028578" },
-                { label: "VAT number", value: "EE102400935" },
-                { label: "Location", value: "Tõnismägi 11a, 10119 Tallinn, Estonia" },
-                { label: "\n", value: "\n" },
-                { label: "Email", value: "info@sohan.ee" },
-                { label: "Phone", value: "+37256089607" },
-                { label: "WhatsApp", value: "+37256089607" },
-              ].map((row) => (
-                <tr key={row.label} className="border-b border-border last:border-b-0">
-                  <th className="w-1/3 px-6 py-4 font-medium text-muted-foreground sm:w-48">
-                    {row.label}
-                  </th>
-                  <td className="px-6 py-4 text-card-foreground">
-                    {row.value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
 
       {/* Contact */}
       <section id="contact" className="bg-secondary/40">
