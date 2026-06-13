@@ -133,7 +133,7 @@ function Index() {
         <div className="relative h-[320px] w-full sm:h-[400px] md:h-[480px]">
           <img
             src={riceHero.url}
-            alt="Sohan rice product packaging in green, yellow, and red bags"
+            alt="Sohan product range — Ayran beverages, premium dates, and rose tea"
             className="h-full w-full object-cover"
             width={1280}
             height={640}
