@@ -1,0 +1,61 @@
+name: Build static hosting package
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-static-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build site
+        run: bun run build
+
+      - name: Prepare static package
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -f ".output/public/index.html" ]; then
+            OUT=".output/public"
+          elif [ -f "dist/index.html" ]; then
+            OUT="dist"
+          else
+            echo "Could not find a static index.html in .output/public or dist."
+            find . -maxdepth 4 -name index.html -print
+            exit 1
+          fi
+
+          mkdir -p static-package
+          cp -a "$OUT"/. static-package/
+
+          test -f static-package/index.html
+          test -f static-package/robots.txt
+          test -f static-package/sitemap.xml
+
+          cd static-package
+          zip -r ../sohan-website.zip .
+
+      - name: Upload hosting ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: sohan-website
+          path: sohan-website.zip
+          if-no-files-found: error
+          retention-days: 30
